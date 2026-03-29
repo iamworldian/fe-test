@@ -192,6 +192,7 @@ function App() {
             style={{
               textAlign: "center",
               marginTop: "1rem",
+              marginBottom: "1rem",
               color: "var(--text-muted)",
               fontSize: "0.8rem",
             }}
