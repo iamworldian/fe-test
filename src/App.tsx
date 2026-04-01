@@ -180,7 +180,7 @@ function App() {
       )}
 
       {/* ── Pagination ── */}
-      {!isLoading && !error && meta && meta.totalPages > 1 && (
+      {!error && meta && meta.totalPages > 1 && (
         <div style={{ marginTop: "2.5rem" }}>
           <Pagination
             currentPage={page}
@@ -197,7 +197,7 @@ function App() {
               fontSize: "0.8rem",
             }}
           >
-            Page {meta.page} of {meta.totalPages}
+            Page {page} of {meta.totalPages}
           </p>
         </div>
       )}
@@ -211,8 +211,10 @@ function App() {
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
               gap: "1.5rem",
+              animation: "fadeIn 0.3s ease-in",
             }}
           >
+            <style>{`@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }`}</style>
             {Array.from({ length: skeletonCount }).map((_, i) => (
               <SkeletonCard key={i} />
             ))}
@@ -285,7 +287,7 @@ function App() {
         )}
       </main>
       {/* ── Pagination ── */}
-      {!isLoading && !error && meta && meta.totalPages > 1 && (
+      {!error && meta && meta.totalPages > 1 && (
         <div style={{ marginTop: "2.5rem" }}>
           <Pagination
             currentPage={page}
@@ -301,7 +303,7 @@ function App() {
               fontSize: "0.8rem",
             }}
           >
-            Page {meta.page} of {meta.totalPages}
+            Page {page} of {meta.totalPages}
           </p>
         </div>
       )}
