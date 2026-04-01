@@ -18,26 +18,18 @@ export function ProductCard({ product }: ProductCardProps) {
   const isOutOfStock = product.stock === 0;
 
   return (
-    <article className="glass-card flex flex-col overflow-hidden">
+    <article className="glass-card flex flex-col overflow-hidden rounded-md">
       {/* image */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
+      <div
+        className="relative overflow-hidden h-50 w-50"
+        style={{ aspectRatio: "4/4" }}
+      >
         <img
           src={product.imageUrl}
           alt={product.name}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 rounded-lg"
         />
-        {/* Category float badge */}
-        <span
-          className="absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-full"
-          style={{
-            background: "rgba(37, 99, 235, 0.85)",
-            color: "white",
-            backdropFilter: "blur(4px)",
-          }}
-        >
-          {product.category}
-        </span>
         {/* out of stock filter */}
         {isOutOfStock && (
           <div
@@ -89,7 +81,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* price + add cart */}
         <div
-          className="flex items-center justify-between pt-2 border-t"
+          className="flex items-center justify-between pt-2"
           style={{ borderColor: "var(--border)" }}
         >
           <span
